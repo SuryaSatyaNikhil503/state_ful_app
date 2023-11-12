@@ -10,9 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "my app",
-      home: HomePage(),
-    );
+        title: "my app",
+        home: HomePage(),
+        theme: ThemeData(
+          primarySwatch: Colors.lightGreen,
+          brightness: Brightness.light,
+        ));
   }
 }
 
@@ -50,17 +53,6 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 25.0,
                   fontFamily: 'Times new Roman'),
             ),
-            new ElevatedButton(
-              child: new Text(
-                "CLICK",
-                style: new TextStyle(
-                    color: Colors.white, fontSize: 20.0, fontFamily: 'arial'),
-              ),
-              onPressed: change,
-              style: ElevatedButton.styleFrom(
-                primary: Colors.red, // Set the button color here
-              ),
-            )
           ],
         ),
       ),
@@ -77,6 +69,11 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Center(child: _bodywidget()),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.add),
+        onPressed: change,
+        backgroundColor: Colors.red,
+      ),
     );
   }
 }
