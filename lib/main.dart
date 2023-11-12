@@ -41,11 +41,25 @@ class _HomePageState extends State<HomePage> {
       padding: EdgeInsets.all(8.0),
       child: new Center(
         child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(mytext),
+            new Text(
+              mytext,
+              style: new TextStyle(
+                  color: Colors.deepPurpleAccent,
+                  fontSize: 25.0,
+                  fontFamily: 'Times new Roman'),
+            ),
             new ElevatedButton(
+              child: new Text(
+                "CLICK",
+                style: new TextStyle(
+                    color: Colors.white, fontSize: 20.0, fontFamily: 'arial'),
+              ),
               onPressed: change,
-              child: new Text("CLICK"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red, // Set the button color here
+              ),
             )
           ],
         ),
